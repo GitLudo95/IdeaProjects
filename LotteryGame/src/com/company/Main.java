@@ -44,7 +44,12 @@ public class Main {
 
             for(int i = 0; i < listUser.length; i++) {
                     System.out.println("Please enter digit " + (i + 1) + ": (enter -1 to exit)");
-                    listUser[i] = input.nextInt();
+
+                    if(input.hasNextInt()) {
+                        listUser[i] = input.nextInt();
+                    } else {
+                        System.out.println("Invalid digit. Please enter a number between 0 (inclusive) and 9 (inclusive)");
+                    }
 
                     if (listUser[i] == -1) {
                         quit = true;
